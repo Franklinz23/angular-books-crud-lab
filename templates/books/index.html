@@ -1,11 +1,10 @@
 <h2>Library Books</h2>
-<div>
-  Here, make the HTML for how you want each book to display.
-  Make sure you display an image, the title, and the author.
-  The title should be a link to the specific book view.
-</div>
 
-<div ng-repeat="book in indexCtrl.books">
+<input type="text" class="form-control" ng-model="searchText" placeholder="Search for a BOOK!">
+
+</br>
+
+<div ng-repeat="book in indexCtrl.books | orderBy: 'title' | filter: searchText" class="row">
 
   <div class='row'>
       <div class="col-md-3 col-xs-6 thumbnail">
@@ -33,5 +32,6 @@
         </ul>
       </div>
     </div>
+
 
 </div>

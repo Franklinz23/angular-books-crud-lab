@@ -32,12 +32,17 @@ function BooksShowController($http, $routeParams, $location) {
 
 };
 
-// //DELETE BOOK
-//   vm.deleteBook = function (book) {
-//     $http({
-//       method: 'DELETE',
-//       url: 'https://super-crud.herokuapp.com/books/' + book._id
-//     })
-  // }
+//DELETE BOOK
+  vm.deleteBook = function (book) {
+    $http({
+      method: 'DELETE',
+      url: 'https://super-crud.herokuapp.com/books/' + book._id
+    }).then(function onSuccess(json) {
+      confirm('Do you really want to delete?');
+      $location.path('/');
+    }, function onError(response) {
+      console.log('ERRR delete', response);
+    });
+  };
 
 }

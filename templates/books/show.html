@@ -1,12 +1,6 @@
 <h2>{{showCtrl.book.title}}</h2>
 <hr>
 <div class="row">
-	<!-- Here, add the display of the book info,
-       the buttons for editing or deleting,
-       the form and buttons that will show if you
-       click edit. Don't forget that all of those
-       buttons and forms will need some angular
-       functionality! -->
 
 			 		<div class="col-md-3 col-xs-6 thumbnail">
 			 			<img src={{showCtrl.book.image}} alt="book image">
@@ -33,7 +27,7 @@
 			 				</li>
 						</br>
 							<li>
-								<button class='btn btn-danger' ng-hide="editing" ng-click="editing = true" >Delete Book</button>
+								<button class='btn btn-danger' ng-hide="editing" ng-click="showCtrl.deleteBook(showCtrl.book)" >Delete Book</button>
 								<button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit Book</button>
 								<button class='btn btn-default' ng-show="editing" ng-click="editing = false">Cancel</button>
 								<button class='btn btn-success' ng-show="editing" ng-click="showCtrl.editBook(showCtrl.book); editing = false">Save Changes</button>
